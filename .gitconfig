@@ -1,0 +1,14 @@
+[user]
+	name = jian.huang
+	email = jian.huang@hulu.com
+[core]
+	editor = vim
+[push]
+	default = matching
+[alias]
+	co = checkout
+    br = branch -v
+    ci = commit
+    st = status
+	unstage = reset HEAD --
+    lg = log --oneline --decorate --graph --all
