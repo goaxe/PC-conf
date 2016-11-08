@@ -53,6 +53,7 @@ plugins=(git)
 
 # User configuration
 
+export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0_91.jdk/Contents/Home"
 export PATH="/usr/local/Cellar/redis/3.2.1/bin:/usr/local/spark-1.6.1-bin-hadoop2.6/bin:/usr/local/Cellar/vim/7.4.1941/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 # export MANPATH="/usr/local/man:$MANPATH"
 #
