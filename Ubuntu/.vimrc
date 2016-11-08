@@ -19,7 +19,6 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Bundle 'VundleVim/Vundle.vim'
-
 Bundle 'dantezhu/authorinfo'
 Bundle 'tomasr/molokai'
 Bundle 'altercation/vim-colors-solarized'
@@ -31,9 +30,10 @@ Bundle 'fatih/vim-go'
 Bundle 'majutsushi/tagbar'
 Bundle 'kien/ctrlp.vim'
 Bundle 'Valloric/YouCompleteMe'
-"Bundle 'dkprice/vim-easygrep'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'Mizuchi/STL-Syntax'
+Bundle 'jiangmiao/auto-pairs'
+"Bundle 'dkprice/vim-easygrep'
 "Bundle 'xolox/vim-misc'
 "Bundle 'xolox/vim-lua-ftplugin'
 "Bundle 'dyng/ctrlsf.vim'
@@ -42,11 +42,7 @@ Bundle 'Mizuchi/STL-Syntax'
 "Bundle 'derekwyatt/vim-fswitch'
 "Bundle 'derekwyatt/vim-protodef'
 "Bundle 'gcmt/wildfire.vim'
-Bundle 'jiangmiao/auto-pairs'
-Bundle 'derekwyatt/vim-scala'
-
-
-
+"Bundle 'derekwyatt/vim-scala'
 "Bundle 'scrooloose/syntastic'
 "Bundle 'nathanaelkane/vim-indent-guides'
 "Bundle 'Valloric/ycmd'
@@ -225,18 +221,21 @@ let g:vimrc_email='huangjian1993@gmail.com'
 let g:vimrc_homepage='https://cn.linkedin.com/in/huangjian1993'
 nnoremap <leader>at :AuthorInfo<CR>
 
+"let g:solarized_termcolors=256
 set t_Co=256
+set background=dark
+colorscheme solarized
+
 " altercation/vim-colors-solarized tomasr/molokai
 " colorscheme
-set background=dark
-if has("gui_running")
-  colorscheme solarized
-else
-  color molokai
-endif
+"if has("gui_running")
+  "colorscheme solarized
+"else
+  "color molokai
+"endif
 "colorscheme solarized
 
-"colorscheme molokai
+colorscheme molokai
 "colorscheme phd
 
 " scrooloose/nerdtree

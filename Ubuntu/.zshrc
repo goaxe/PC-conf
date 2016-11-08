@@ -55,21 +55,26 @@ plugins=(git zsh-completions zsh-autosuggestions zsh-syntax-highlighting)
 
 
 # User configuration
+#
+export TERM=xterm-256color
 
-alias wc-c="find ./ *.c *.h | xargs wc -l"
+alias wc-c="find ./ *.c *.cpp *.h | xargs wc -l"
+alias wc-cc="find ./ *.cc *.h | xargs wc -l"
 alias wc-java="find ./ *.java | xargs wc -l"
 alias open='xdg-open'
 
 export JAVA_HOME=/usr/local/jdk1.8.0_101
 export SCALA_HOME=/usr/local/scala-2.11.8
-export SPARK_HOME=/usr/local/spark-1.6.1-bin-hadoop2.6
-export IGNITE_HOME=/usr/local/apache-ignite-hadoop-1.6.0-bin
-export HADOOP_HOME=/usr/local/hadoop-2.6.4
+export SPARK_HOME=/usr/local/spark-2.0.0-bin-hadoop2.7
 export GOROOT=/usr/local/go
 
-export PATH="/usr/local/pypy2-v5.3.0-linux64/bin:/opt/android-studio/bin:/usr/local/redis:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin"
+export PATH="/usr/local/pypy2-v5.3.0-linux64/bin:/usr/local/redis:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin"
 export PATH=$HADOOP_HOME/bin:$IGNITE_HOME/bin:$SPARK_HOME/bin:$SCALA_HOME/bin:$JAVA_HOME/bin:$GOROOT/bin/:$PATH
 # export MANPATH="/usr/local/man:$MANPATH"
+
+if [ `which tmux 2> /dev/null` -a -z "$TMUX"  ]; then
+    tmux -2 attach || tmux -2 new; exit
+fi
 
 source $ZSH/oh-my-zsh.sh
 
