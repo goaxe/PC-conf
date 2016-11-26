@@ -49,17 +49,22 @@ DISABLE_AUTO_UPDATE="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git zsh-completions zsh-autosuggestions zsh-syntax-highlighting)
 
 # User configuration
 
-export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0_91.jdk/Contents/Home"
-export PATH="/usr/local/Cellar/redis/3.2.1/bin:/usr/local/spark-1.6.1-bin-hadoop2.6/bin:/usr/local/Cellar/vim/7.4.1941/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+export CELLAR_HOME="/usr/local/Cellar"
+export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home"
+export PATH="/usr/local/firework-0.2.0/bin:$CELLAR_HOME/redis/3.2.5/bin:$CELLAR_HOME/vim/8.0.0094/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 # export MANPATH="/usr/local/man:$MANPATH"
 #
 alias tutor_mysql="mysql -hsoho-tutor-mysql1-test -ututor -ptutor123"
 alias wc-c="find ./ *.c *.h | xargs wc -l"
 alias wc-java="find ./ '*.java' | xargs wc -l"
+
+if [ `which tmux 2> /dev/null` -a -z "$TMUX"   ]; then
+    tmux -2 attach || tmux -2 new; exit
+fi
 
 source $ZSH/oh-my-zsh.sh
 
